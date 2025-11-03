@@ -1,0 +1,3 @@
+Quantum error mitigation refers to techniques that reduce the impact of noise on computation
+without requiring full quantum error correction. Methods include zero-noise extrapolation, 
+probabilistic error cancellation, and symmetry verification. These are vital for NISQ devices.

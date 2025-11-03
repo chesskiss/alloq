@@ -1,0 +1,31 @@
+name: "Default Scientific Claim Rubric"
+version: "0.1"
+passing_score: 0.6
+notes: |
+  Intended for technical claims. Mix lexical quick checks with LLM checks.
+rules:
+  - id: Q1-problem-specified
+    description: "The claim states the exact problem class and input distribution assumptions."
+    weight: 1.0
+    severity: warn
+    checker: llm
+    params: {}
+  - id: Q2-baseline
+    description: "There is a stated classical baseline and complexity comparison (e.g., GPU/FFT)."
+    weight: 1.0
+    severity: error
+    checker: llm
+    params: {}
+  - id: Q3-no-hype
+    description: "Rejects hype terms like 'exponential speedup' without formal conditions."
+    weight: 1.0
+    severity: error
+    checker: contains_any
+    params:
+      terms: ["exponential speedup", "quantum supremacy"]
+  - id: Q4-evidence
+    description: "Includes empirical evidence or citations to peer‑reviewed sources."
+    weight: 1.0
+    severity: warn
+    checker: llm
+    params: {}
